@@ -1,0 +1,15 @@
+{
+    # Global options block. Entirely optional, https is on by default
+    # Optional email key for lets encrypt
+    email {$ADMIN_EMAIL} 
+    # Optional staging lets encrypt for testing. Comment out for production.
+    acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+}
+
+tremulanttech.com {
+    reverse_proxy tremulanttech:5173
+}
+
+www.tremulanttech.com {
+    redir https://tremulanttech.com{uri}
+}

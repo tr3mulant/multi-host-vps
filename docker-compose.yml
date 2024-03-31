@@ -1,0 +1,33 @@
+services:
+  caddy_reverse_proxy_server:
+    image: caddy:2.7.6-alpine
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      backend:
+      frontend:
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+  tremulant_tech:
+    image: tremulantech.digitalocean:latest
+    restart: unless-stopped
+    env_file: .env.tremulant_tech
+    networks:
+      backend:
+    expose:
+      - 5173
+networks:
+  backend:
+    external: false
+  frontend:
+    external: true
+volumes:
+  caddy-data:
+  caddy-config:
