@@ -3,8 +3,8 @@
 # This script assumes the necessary permissions are in place and Github 
 # credentials are set up correctly
 
-repo_url="https://github.com/tr3mulant/multi-host-vps"
-repo_dir="multi-host-vps"
+repo_url="https://github.com/tr3mulant/vps-proxy-multi-site"
+repo_dir="vps-proxy-multi-site"
 
 # If it exists, change directory to it and pull the latest changes
 # Otherwise, let's clone the repo and put it in the repo directory above
