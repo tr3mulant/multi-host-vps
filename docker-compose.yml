@@ -16,7 +16,7 @@ services:
       - caddy_config:/config
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
   tremulant_tech:
-    image: tremulantech.digitalocean:latest
+    image: registry.digitalocean.com/tremulanttech/tremulanttech:latest
     restart: unless-stopped
     env_file: .env.tremulant_tech
     networks:
